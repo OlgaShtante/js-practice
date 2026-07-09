@@ -10,6 +10,10 @@ and AJAX; basic work with NoSQL databases and building services to
 request / create / update / remove their data; ES5 and ES6; debugging and
 testing code.
 
+> Code by me, 2019 — back then there was no AI assistance, and a lot of the work
+> was done via `console.log` and the `debugger`. Reorganized in 2026 with Claude:
+> finally giving the `debugger` / `console.log` a day off.
+
 Tasks are grouped into folders by concept, and each task has its own
 `README.md` describing what it practises, its key source file(s), and how to run
 it. The groups below are ordered as a rough learning path — from variables and
