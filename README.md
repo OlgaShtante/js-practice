@@ -94,6 +94,11 @@ To run locally:
   npm install && npm start   # then open the printed URL
   ```
 
+  > These modular tasks were originally scaffolded as Create React App projects
+  > (`react-scripts`) when exported to StackBlitz — even though the code is plain
+  > vanilla JS with no React. The 2026 cleanup replaced that phantom CRA setup
+  > with Parcel, so they now build and launch reliably.
+
 - **Flat tasks** (an `index.html` at the task-folder root, e.g.
   `0-fundamentals-and-dom/1-background-color-switcher`,
   `0-fundamentals-and-dom/4-prompt-form-validation`) need nothing at all — just
