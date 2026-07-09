@@ -1,0 +1,12 @@
+# Nested Function Scope
+
+Builds a classroom object graph with constructor functions all declared **inside
+a nested function** (`toDisplay` → `roomDescription`), returning the composed
+`room` and dumping it into the page with `JSON.stringify`.
+
+**Practises:** lexical/nested scope, constructor functions, object composition,
+`JSON.stringify`.
+
+**Source:** [`main.js`](main.js)
+
+**Run:** open [`index.html`](index.html) directly in a browser.
