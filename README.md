@@ -78,23 +78,28 @@ A single-page index of every task with live StackBlitz links is in
 
 ## Running a task
 
-Most tasks are plain HTML + ES modules and need no build step.
+The quickest way to run any task is to open its folder in StackBlitz straight
+from GitHub, e.g.
+`https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/4-promises-and-async/2-async-await-fetch`.
+The [task index](public/index.html) links every task this way.
 
-- **Modular tasks** (a `src/` + `public/` folder): open the task folder in
-  StackBlitz straight from GitHub, e.g.
-  `https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/4-promises-and-async/2-async-await-fetch`,
-  or serve it locally with any static server:
+To run locally:
+
+- **Modular tasks** (a `src/` + `public/` folder) use a tiny
+  [Parcel](https://parceljs.org) dev server — no framework, just bundling of the
+  vanilla ES modules:
 
   ```bash
-  npx serve 4-promises-and-async/0-custom-promise-delay   # then open the printed URL
+  cd 4-promises-and-async/0-custom-promise-delay
+  npm install && npm start   # then open the printed URL
   ```
 
 - **Flat tasks** (an `index.html` at the task-folder root, e.g.
   `0-fundamentals-and-dom/1-background-color-switcher`,
-  `0-fundamentals-and-dom/4-prompt-form-validation`): just open `index.html` in a
-  browser.
+  `0-fundamentals-and-dom/4-prompt-form-validation`) need nothing at all — just
+  open `index.html` in a browser.
 
-Most output goes to the browser console — keep DevTools open.
+Most tasks log their output to the browser console, so keep DevTools open.
 
 ## Note
 
