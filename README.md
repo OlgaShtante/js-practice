@@ -19,62 +19,71 @@ Tasks are grouped into folders by concept, and each task has its own
 it. The groups below are ordered as a rough learning path — from variables and
 DOM manipulation up to Promises, `async`/`await`, and `fetch`/XHR.
 
-## Topics covered
+## Tasks
 
-Each group folder also has its own README.
+Each task links to its code; **▶ StackBlitz** opens it live in the browser.
 
 ### [`0-fundamentals-and-dom/`](0-fundamentals-and-dom)
-Inputs, events, styling and forms:
-[`0-simplest-calculator`](0-fundamentals-and-dom/0-simplest-calculator),
-[`1-background-color-switcher`](0-fundamentals-and-dom/1-background-color-switcher),
-[`2-color-list-manager`](0-fundamentals-and-dom/2-color-list-manager),
-[`3-color-items-editor`](0-fundamentals-and-dom/3-color-items-editor),
-[`4-prompt-form-validation`](0-fundamentals-and-dom/4-prompt-form-validation)
+Inputs, events, styling and forms.
+
+- [`0-simplest-calculator`](0-fundamentals-and-dom/0-simplest-calculator) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/0-fundamentals-and-dom/0-simplest-calculator)
+- [`1-background-color-switcher`](0-fundamentals-and-dom/1-background-color-switcher) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/0-fundamentals-and-dom/1-background-color-switcher)
+- [`2-color-list-manager`](0-fundamentals-and-dom/2-color-list-manager) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/0-fundamentals-and-dom/2-color-list-manager)
+- [`3-color-items-editor`](0-fundamentals-and-dom/3-color-items-editor) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/0-fundamentals-and-dom/3-color-items-editor)
+- [`4-prompt-form-validation`](0-fundamentals-and-dom/4-prompt-form-validation) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/0-fundamentals-and-dom/4-prompt-form-validation)
 
 ### [`1-objects-and-prototypes/`](1-objects-and-prototypes)
-Object literals, constructors and the prototype chain:
-[`0-classroom-object-literals`](1-objects-and-prototypes/0-classroom-object-literals),
-[`1-nested-function-scope`](1-objects-and-prototypes/1-nested-function-scope),
-[`2-classroom-oop-model`](1-objects-and-prototypes/2-classroom-oop-model),
-[`3-prototype-inheritance`](1-objects-and-prototypes/3-prototype-inheritance),
-[`4-prototype-chain`](1-objects-and-prototypes/4-prototype-chain)
+Object literals, constructors and the prototype chain.
+
+- [`0-classroom-object-literals`](1-objects-and-prototypes/0-classroom-object-literals) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/1-objects-and-prototypes/0-classroom-object-literals)
+- [`1-nested-function-scope`](1-objects-and-prototypes/1-nested-function-scope) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/1-objects-and-prototypes/1-nested-function-scope)
+- [`2-classroom-oop-model`](1-objects-and-prototypes/2-classroom-oop-model) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/1-objects-and-prototypes/2-classroom-oop-model)
+- [`3-prototype-inheritance`](1-objects-and-prototypes/3-prototype-inheritance) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/1-objects-and-prototypes/3-prototype-inheritance)
+- [`4-prototype-chain`](1-objects-and-prototypes/4-prototype-chain) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/1-objects-and-prototypes/4-prototype-chain)
 
 ### [`2-dom-effects-and-canvas/`](2-dom-effects-and-canvas)
-Hover, redirect, slideshows and Canvas:
-[`0-hover-tooltip`](2-dom-effects-and-canvas/0-hover-tooltip),
-[`1-link-redirect`](2-dom-effects-and-canvas/1-link-redirect),
-[`2-auto-slideshow`](2-dom-effects-and-canvas/2-auto-slideshow),
-[`3-image-carousel`](2-dom-effects-and-canvas/3-image-carousel),
-[`4-canvas-mouse-drawing`](2-dom-effects-and-canvas/4-canvas-mouse-drawing)
+Hover, redirect, slideshows and Canvas.
+
+- [`0-hover-tooltip`](2-dom-effects-and-canvas/0-hover-tooltip) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/2-dom-effects-and-canvas/0-hover-tooltip)
+- [`1-link-redirect`](2-dom-effects-and-canvas/1-link-redirect) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/2-dom-effects-and-canvas/1-link-redirect)
+- [`2-auto-slideshow`](2-dom-effects-and-canvas/2-auto-slideshow) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/2-dom-effects-and-canvas/2-auto-slideshow)
+- [`3-image-carousel`](2-dom-effects-and-canvas/3-image-carousel) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/2-dom-effects-and-canvas/3-image-carousel)
+- [`4-canvas-mouse-drawing`](2-dom-effects-and-canvas/4-canvas-mouse-drawing) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/2-dom-effects-and-canvas/4-canvas-mouse-drawing)
 
 ### [`3-closures-timers-recursion/`](3-closures-timers-recursion)
-Scope, closures, timers and recursion:
-[`0-clock-tabs-stopwatch-timer`](3-closures-timers-recursion/0-clock-tabs-stopwatch-timer),
-[`1-closures-counter-sum`](3-closures-timers-recursion/1-closures-counter-sum),
-[`2-closure-timing-logger`](3-closures-timers-recursion/2-closure-timing-logger),
-[`3-recursive-password-check`](3-closures-timers-recursion/3-recursive-password-check),
-[`4-nested-object-methods`](3-closures-timers-recursion/4-nested-object-methods)
+Scope, closures, timers and recursion.
+
+- [`0-clock-tabs-stopwatch-timer`](3-closures-timers-recursion/0-clock-tabs-stopwatch-timer) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/3-closures-timers-recursion/0-clock-tabs-stopwatch-timer)
+- [`1-closures-counter-sum`](3-closures-timers-recursion/1-closures-counter-sum) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/3-closures-timers-recursion/1-closures-counter-sum)
+- [`2-closure-timing-logger`](3-closures-timers-recursion/2-closure-timing-logger) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/3-closures-timers-recursion/2-closure-timing-logger)
+- [`3-recursive-password-check`](3-closures-timers-recursion/3-recursive-password-check) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/3-closures-timers-recursion/3-recursive-password-check)
+- [`4-nested-object-methods`](3-closures-timers-recursion/4-nested-object-methods) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/3-closures-timers-recursion/4-nested-object-methods)
 
 ### [`4-promises-and-async/`](4-promises-and-async)
-Promises, `async`/`await`, XHR and `fetch`:
-[`0-custom-promise-delay`](4-promises-and-async/0-custom-promise-delay),
-[`1-promise-returning-function`](4-promises-and-async/1-promise-returning-function),
-[`2-async-await-fetch`](4-promises-and-async/2-async-await-fetch),
-[`3-promisified-xhr`](4-promises-and-async/3-promisified-xhr),
-[`4-xhr-json-callback`](4-promises-and-async/4-xhr-json-callback)
+Promises, `async`/`await`, XHR and `fetch`.
+
+- [`0-custom-promise-delay`](4-promises-and-async/0-custom-promise-delay) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/4-promises-and-async/0-custom-promise-delay)
+- [`1-promise-returning-function`](4-promises-and-async/1-promise-returning-function) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/4-promises-and-async/1-promise-returning-function)
+- [`2-async-await-fetch`](4-promises-and-async/2-async-await-fetch) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/4-promises-and-async/2-async-await-fetch)
+- [`3-promisified-xhr`](4-promises-and-async/3-promisified-xhr) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/4-promises-and-async/3-promisified-xhr)
+- [`4-xhr-json-callback`](4-promises-and-async/4-xhr-json-callback) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/4-promises-and-async/4-xhr-json-callback)
 
 ### [`5-urls-and-rest/`](5-urls-and-rest)
-Query-string parsing and REST requests:
-[`0-parse-url-params`](5-urls-and-rest/0-parse-url-params),
-[`1-url-parser-class`](5-urls-and-rest/1-url-parser-class),
-[`2-rest-http-requests`](5-urls-and-rest/2-rest-http-requests)
+Query-string parsing and REST requests.
+
+- [`0-parse-url-params`](5-urls-and-rest/0-parse-url-params) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/5-urls-and-rest/0-parse-url-params)
+- [`1-url-parser-class`](5-urls-and-rest/1-url-parser-class) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/5-urls-and-rest/1-url-parser-class)
+- [`2-rest-http-requests`](5-urls-and-rest/2-rest-http-requests) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/5-urls-and-rest/2-rest-http-requests)
 
 ### [`6-vruslo-project-pages/`](6-vruslo-project-pages)
-Not standalone exercises — link/landing pages for a separate course project
-("vRUSLO"). See the group README.
+Not standalone exercises — link/landing pages for a separate course project ("vRUSLO").
 
-A single-page index of every task with live StackBlitz links is in
-[`public/index.html`](public/index.html).
+- [`0-vruslo-promises-links`](6-vruslo-project-pages/0-vruslo-promises-links) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/6-vruslo-project-pages/0-vruslo-promises-links)
+- [`1-vruslo-events-links`](6-vruslo-project-pages/1-vruslo-events-links) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/6-vruslo-project-pages/1-vruslo-events-links)
+- [`2-vruslo-url-params-links`](6-vruslo-project-pages/2-vruslo-url-params-links) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/6-vruslo-project-pages/2-vruslo-url-params-links)
+- [`3-vruslo-xhr-links`](6-vruslo-project-pages/3-vruslo-xhr-links) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/6-vruslo-project-pages/3-vruslo-xhr-links)
+- [`4-vruslo-json-server-links`](6-vruslo-project-pages/4-vruslo-json-server-links) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/6-vruslo-project-pages/4-vruslo-json-server-links)
+- [`5-vruslo-peer-review`](6-vruslo-project-pages/5-vruslo-peer-review) — [▶ StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/master/6-vruslo-project-pages/5-vruslo-peer-review)
 
 ## Running a task
 
