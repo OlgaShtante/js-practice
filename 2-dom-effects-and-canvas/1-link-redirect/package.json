@@ -1,18 +1,13 @@
 {
-  "name": "rlmixqql.github",
-  "version": "0.0.0",
+  "name": "link-redirect",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "react": "16.8.6",
-    "react-dom": "16.8.6"
-  },
+  "source": "public/index.html",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "devDependencies": {
-    "react-scripts": "latest"
+    "parcel": "^2.12.0"
   }
 }
