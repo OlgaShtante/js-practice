@@ -1,8 +1,14 @@
 # js-practice
 
-Exercises from my JavaScript course — vanilla JS fundamentals worked through
-from language basics up to asynchronous programming and REST calls. These are
+Coursework from **Web Application Development with JavaScript** (Computer
+Programming, Specific Applications) at **IT Academy** (Minsk), Apr–Aug 2019. These are
 learning artifacts, kept public as a record of the ground I covered.
+
+**Course scope:** working effectively with web pages; handling mouse, keyboard,
+touchscreen and other events; writing regular expressions; SVG and Canvas; JSON
+and AJAX; basic work with NoSQL databases and building services to
+request / create / update / remove their data; ES5 and ES6; debugging and
+testing code.
 
 Tasks are grouped into folders by concept, and each task has its own
 `README.md` describing what it practises, its key source file(s), and how to run
