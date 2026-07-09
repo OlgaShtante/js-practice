@@ -94,9 +94,9 @@ The [task index](public/index.html) links every task this way.
 
 To run locally:
 
-- **Modular tasks** (a `src/` + `public/` folder) are just static files — the
-  browser runs the vanilla ES modules natively, no build step. Their
-  `package.json` only starts a static server:
+- **Modular tasks** (an `index.html` at the task root with a `src/` folder of ES
+  modules) are just static files — the browser runs the modules natively, no
+  build step. Their `package.json` only starts a static server:
 
   ```bash
   cd 4-promises-and-async/0-custom-promise-delay

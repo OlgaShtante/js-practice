@@ -1,7 +1,6 @@
 {
   "version": "1.0.0",
   "private": true,
-  "source": "public/index.html",
   "scripts": {
     "start": "npx -y serve ."
   }
