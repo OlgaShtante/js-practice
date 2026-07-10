@@ -13,5 +13,7 @@ loop. The canvas resizes with the window and re-initialises.
 > Note named "mouse drawing" but the current code animates drifting particles;
 > the `mouse` position is tracked but not yet used to draw.
 
-**Run:** open in [StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/2-dom-effects-and-canvas/4-canvas-mouse-drawing?view=preview) or serve statically (see the
+**Run:** serve statically (see the
 [repo README](../../README.md#running-a-task)).
+
+[**▶ Live demo**](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/2-dom-effects-and-canvas/4-canvas-mouse-drawing?view=preview)

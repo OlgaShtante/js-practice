@@ -12,5 +12,7 @@ restoring `constructor`, how the lookup chain is assembled.
 
 **Source:** [`src/modules/main.js`](src/modules/main.js)
 
-**Run:** open in [StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/1-objects-and-prototypes/4-prototype-chain?view=preview) or serve statically; inspect the logged object in
+**Run:** serve statically; inspect the logged object in
 the console.
+
+[**▶ Live demo**](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/1-objects-and-prototypes/4-prototype-chain?view=preview)

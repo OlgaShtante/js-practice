@@ -10,4 +10,6 @@ non-trivial values, `Function.prototype.bind`.
 
 **Source:** [`src/modules/main.js`](src/modules/main.js)
 
-**Run:** open in [StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/4-promises-and-async/1-promise-returning-function?view=preview) or serve statically; output is in the console.
+**Run:** serve statically; output is in the console.
+
+[**▶ Live demo**](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/4-promises-and-async/1-promise-returning-function?view=preview)

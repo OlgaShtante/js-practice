@@ -12,5 +12,7 @@ vs. regular expressions), `String.replace` with a callback.
 
 > A class-based extension of [`parse-url-params`](../0-parse-url-params).
 
-**Run:** open in [StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/5-urls-and-rest/1-url-parser-class?view=preview) or serve statically; enter a URL and watch the
+**Run:** serve statically; enter a URL and watch the
 console.
+
+[**▶ Live demo**](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/5-urls-and-rest/1-url-parser-class?view=preview)

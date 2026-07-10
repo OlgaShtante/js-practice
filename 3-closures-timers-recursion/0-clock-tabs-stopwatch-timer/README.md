@@ -19,5 +19,7 @@ their own direction.
 **Source:** [`src/modules/`](src/modules/) — `clock`, `tabs`, `stopwatch`,
 `timer`, `stopwatchTimer`, `classUpdate`.
 
-**Run:** open in [StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/3-closures-timers-recursion/0-clock-tabs-stopwatch-timer?view=preview) or serve statically (see the
+**Run:** serve statically (see the
 [repo README](../../README.md#running-a-task)).
+
+[**▶ Live demo**](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/3-closures-timers-recursion/0-clock-tabs-stopwatch-timer?view=preview)
