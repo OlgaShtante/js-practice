@@ -22,5 +22,5 @@ microtasks vs. macrotasks, event-loop ordering, a reusable `Logger` abstraction.
 
 **Source:** [`src/modules/`](src/modules/)
 
-**Run:** open in StackBlitz or serve statically; watch the console and click the
+**Run:** open in [StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/4-promises-and-async/2-async-await-fetch?view=preview) or serve statically; watch the console and click the
 button when prompted.

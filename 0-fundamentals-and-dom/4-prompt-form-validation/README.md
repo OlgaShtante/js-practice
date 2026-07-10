@@ -10,3 +10,5 @@ retirement status and reports them in a single `alert`.
 **Source:** [`main.js`](main.js)
 
 **Run:** open [`index.html`](index.html) and click the button.
+
+**▶ Live demo:** [open in StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/0-fundamentals-and-dom/4-prompt-form-validation?view=preview)

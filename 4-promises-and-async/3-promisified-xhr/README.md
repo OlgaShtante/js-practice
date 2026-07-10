@@ -13,5 +13,5 @@ methods.
 > Compare with [`xhr-json-callback`](../4-xhr-json-callback), the callback-only
 > version of the same idea.
 
-**Run:** open in StackBlitz or serve statically; click the request button and
+**Run:** open in [StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/4-promises-and-async/3-promisified-xhr?view=preview) or serve statically; click the request button and
 watch the console.

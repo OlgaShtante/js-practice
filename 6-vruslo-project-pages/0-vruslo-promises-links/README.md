@@ -1,4 +1,4 @@
-# vRUSLO — Promises stage (project links)
+# vRUSLO â Promises stage (project links)
 
 **Not a standalone code exercise.** A link/landing page for the course's larger
 **vRUSLO** project at the Promises stage. `index.html` points to external Google

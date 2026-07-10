@@ -13,4 +13,4 @@ to check the console.
 > Compare with [`promisified-xhr`](../3-promisified-xhr), which wraps the same
 > idea in a Promise.
 
-**Run:** open in StackBlitz or serve statically; watch the console.
+**Run:** open in [StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/4-promises-and-async/4-xhr-json-callback?view=preview) or serve statically; watch the console.

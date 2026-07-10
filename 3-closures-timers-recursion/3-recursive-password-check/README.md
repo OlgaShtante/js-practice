@@ -8,5 +8,5 @@ itself** on a wrong answer instead of using a loop.
 
 **Source:** [`src/modules/main.js`](src/modules/main.js)
 
-**Run:** open in StackBlitz or serve statically; click the button (password is
+**Run:** open in [StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/3-closures-timers-recursion/3-recursive-password-check?view=preview) or serve statically; click the button (password is
 `mypassword`).

@@ -8,5 +8,5 @@ again on `mouseleave`.
 
 **Source:** [`src/modules/main.js`](src/modules/main.js)
 
-**Run:** open in StackBlitz or serve statically (see the
+**Run:** open in [StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/2-dom-effects-and-canvas/0-hover-tooltip?view=preview) or serve statically (see the
 [repo README](../../README.md#running-a-task)).

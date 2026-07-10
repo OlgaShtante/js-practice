@@ -10,3 +10,5 @@ validation, CSS custom properties.
 **Source:** [`main.js`](main.js)
 
 **Run:** open [`index.html`](index.html) directly in a browser.
+
+**▶ Live demo:** [open in StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/0-fundamentals-and-dom/2-color-list-manager?view=preview)

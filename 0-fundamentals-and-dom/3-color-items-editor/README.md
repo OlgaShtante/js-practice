@@ -14,3 +14,5 @@ validation.
 > Builds on [`color-list-manager`](../2-color-list-manager).
 
 **Run:** open [`index.html`](index.html) directly in a browser.
+
+**▶ Live demo:** [open in StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/0-fundamentals-and-dom/3-color-items-editor?view=preview)

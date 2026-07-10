@@ -11,5 +11,5 @@ and lets you step through slides manually; leaving resumes it.
 
 > Builds on [`auto-slideshow`](../2-auto-slideshow).
 
-**Run:** open in StackBlitz or serve statically (see the
+**Run:** open in [StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/2-dom-effects-and-canvas/3-image-carousel?view=preview) or serve statically (see the
 [repo README](../../README.md#running-a-task)).

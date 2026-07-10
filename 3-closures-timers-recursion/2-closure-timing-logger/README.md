@@ -13,4 +13,4 @@ explain the closure at each step.)
 **Source:** [`src/modules/`](src/modules/) — `main`, `logger`, `buttonClick`,
 `setTimeout`, `syncDelay`, `xmlHttpRequest`.
 
-**Run:** open in StackBlitz or serve statically; watch the console for ordering.
+**Run:** open in [StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/3-closures-timers-recursion/2-closure-timing-logger?view=preview) or serve statically; watch the console for ordering.

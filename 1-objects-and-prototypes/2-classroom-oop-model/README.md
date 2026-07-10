@@ -17,5 +17,5 @@ functions across files, instance vs. prototype methods, object composition.
 > [`classroom-object-literals`](../0-classroom-object-literals) (object literals),
 > and [`prototype-inheritance`](../3-prototype-inheritance) (prototype methods).
 
-**Run:** open in StackBlitz or serve statically (see the
+**Run:** open in [StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/1-objects-and-prototypes/2-classroom-oop-model?view=preview) or serve statically (see the
 [repo README](../../README.md#running-a-task)); output is in the console.

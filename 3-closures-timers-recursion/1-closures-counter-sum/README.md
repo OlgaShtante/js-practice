@@ -15,4 +15,4 @@ attaching properties to functions.
 **Source:** [`src/modules/counter.js`](src/modules/counter.js),
 [`src/modules/sum.js`](src/modules/sum.js)
 
-**Run:** open in StackBlitz or serve statically; output is in the console.
+**Run:** open in [StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/3-closures-timers-recursion/1-closures-counter-sum?view=preview) or serve statically; output is in the console.
