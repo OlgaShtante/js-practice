@@ -1,4 +1,4 @@
-# Classroom â Object Literals
+# Classroom — Object Literals
 
 Describes the same classroom domain (teacher, students, furniture, tech
 equipment, construction and decor elements) using **object literals with method
@@ -14,9 +14,9 @@ arrow vs. regular function methods.
 > (constructor-function version) and
 > [`classroom-oop-model`](../2-classroom-oop-model) (module version).
 > Note: the code has a couple of latent bugs left from the exercise
-> (`desk`/`desks` typo, `window.windowClosed`) â kept as-is as a learning
+> (`desk`/`desks` typo, `window.windowClosed`) — kept as-is as a learning
 > artifact.
 
 **Run:** open [`index.html`](index.html) directly in a browser.
 
-**▶ Live demo:** [open in StackBlitz](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/1-objects-and-prototypes/0-classroom-object-literals?view=preview)
+[**▶ Live demo**](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/1-objects-and-prototypes/0-classroom-object-literals?view=preview)
