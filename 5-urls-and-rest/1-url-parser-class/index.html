@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>URL Parser Class</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js-practice · url parser class</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-    <h1>Input your URL & check the console</h1>
-    <div>
-      <input
-        class="urlInput"
-        placeholder="https://www.example.com?a=1&b=&c=3"
-      />
-      <button type="submit" class="btn">parse</button>
-    </div>
+    <main class="card">
+      <h1 class="card__title">url parser class</h1>
+      <p class="card__sub">
+        parses query params two ways: string split and a regexp; result logs
+        below
+      </p>
+
+      <div class="field">
+        <label class="field__label" for="url-input">url</label>
+        <input
+          id="url-input"
+          name="url"
+          class="urlInput field__input"
+          placeholder="https://example.com?a=1&amp;b=&amp;c=3"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn btn--primary">parse</button>
+      </div>
+
+      <pre class="console" id="out"></pre>
+    </main>
+    <script src="src/mirror.js"></script>
     <script type="module" src="src/modules/main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Reading parameters out of a URL, by splitting or by regex, is what lets a page react to what was actually requested."
+    ></script>
   </body>
 </html>

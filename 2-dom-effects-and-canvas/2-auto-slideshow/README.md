@@ -6,10 +6,13 @@ advancing every 3 seconds with a recursive `setTimeout`.
 **Practises:** `getElementsByClassName`, `setTimeout` recursion, index
 wrap-around, toggling `style.display`.
 
+**Why it matters:** Advancing through items on a timer is the timing pattern
+behind carousels, banners, and any self-updating view.
+
 **Source:** [`src/modules/main.js`](src/modules/main.js)
 
 > Note: [`image-carousel`](../3-image-carousel) extends this with manual
-> prev/next arrows on hover. (This file also relies on an undeclared `i` — an
+> prev/next arrows on hover. (This file also relies on an undeclared `i`, an
 > implicit global; the carousel version fixes that.)
 
 **Run:** serve statically (see the

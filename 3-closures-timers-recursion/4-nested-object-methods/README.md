@@ -9,8 +9,12 @@ forever.
 **Practises:** recursion over object graphs, `typeof x === "object"`,
 `for…in`, detecting cycles, nested methods and `this`.
 
+**Why it matters:** Walking a nested object recursively while guarding against
+cycles is exactly what deep-clone and serialization routines have to handle.
+
 **Source:** [`src/modules/main.js`](src/modules/main.js)
 
-**Run:** serve statically; output is in the console.
+**Run:** serve statically; the console output is mirrored into the panel on the
+page.
 
 [**▶ Live demo**](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/3-closures-timers-recursion/4-nested-object-methods?view=preview)

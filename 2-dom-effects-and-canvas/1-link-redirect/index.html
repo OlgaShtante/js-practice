@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Link Redirect</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js-practice · link redirect</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-    <div>
-      <a class="myLink" href="http://tut.by">link</a>
-    </div>
+    <main class="card">
+      <h1 class="card__title">link redirect</h1>
+      <p class="card__sub">
+        the link points at tut.by, but the click is intercepted and the target
+        opens in a new tab instead
+      </p>
+
+      <a class="myLink hint-link" href="http://tut.by">follow the link</a>
+      <p class="note" id="redirect-log" hidden></p>
+    </main>
     <script type="module" src="src/modules/main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Intercepting a default browser action with preventDefault is what lets JavaScript take over links, forms, and other native behaviour."
+    ></script>
   </body>
 </html>

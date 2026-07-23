@@ -6,91 +6,43 @@ import { ConstructionEquipment } from "./constructEquip.js";
 import { DecorElements } from "./decElements.js";
 import { Room } from "./room.js";
 
-const realTeacher = new Teacher("Yury", "Tatsenka", 33);
-//область видимости ограничена данным модулем main.js
-const rusTeacher = new Teacher("Юрий", "Татенко", 33);
-//область видимости ограничена данным модулем main.js
-
-const groupOfStudents = new Students(
-  //область видимости ограничена данным модулем main.js
-  [
-    " Maxim",
-    " Alexandr",
-    " Alex",
-    " Alexey",
-    " Tural",
-    " Max",
-    " Ilya",
-    " Vladislav",
-    " Eugeniy",
-    " Oleg"
-  ],
-  [" Kristina", " Tanya", " Olga"]
+// each entity is defined in its own module; main.js composes them into one Room
+const teacher = new Teacher("Yury", "Tatsenka", 33);
+const students = new Students(
+  ["Maxim", "Alexandr", "Alex", "Alexey", "Tural", "Max", "Ilya", "Vladislav", "Eugeniy", "Oleg"],
+  ["Kristina", "Tanya", "Olga"]
 );
-
-const roomFurniture = new Furniture(
-  //область видимости ограничена данным модулем main.js
-  20,
-  1,
-  20,
+const furniture = new Furniture(20, 1, 20,
   { size: "middle", quantity: 20 },
-  {
-    seatMaterial: "fabric",
-    chairMaterial: "plastic",
-    height: "controllable",
-    quantity: 21
-  }
+  { seatMaterial: "fabric", frameMaterial: "plastic", height: "adjustable", quantity: 21 }
 );
-
-const roomTechEquipment = new TechEquipment(
-  //область видимости ограничена данным модулем main.js
-  {
-    monitors: 21,
-    systemUnits: 21,
-    keyboards: 21,
-    mouses: 21,
-    speakers: "null",
-    michrophones: "null"
-  },
-  { useful: "yes", working: "yes" },
-  { remoteControler: "lost", workingWell: "yes" }
+const tech = new TechEquipment(
+  { monitors: 21, systemUnits: 21, keyboards: 21, mice: 21 },
+  { working: true },
+  { remoteControl: "lost", workingWell: true }
 );
-
-const roomConstructionElements = new ConstructionEquipment(
-  //область видимости ограничена данным модулем main.js
+const construction = new ConstructionEquipment(
   { material: "wood", size: "standard" },
-  {
-    material: {
-      frameMaterial: "plastic",
-      windowMaterial: "glass"
-    },
-    size: "big"
-  }
+  { frameMaterial: "plastic", glassMaterial: "glass", size: "big" }
 );
-
-const roomDecorElements = new DecorElements(
-  //область видимости ограничена данным модулем main.js
+const decor = new DecorElements(
   { type: "roll", material: "fabric" },
-  { decorType: "wallPainting", style: "abstractArt" }
+  { style: "abstract", type: "painting" }
 );
 
-const room = new Room(
-  //область видимости ограничена данным модулем main.js
-  rusTeacher,
-  groupOfStudents,
-  roomFurniture,
-  roomTechEquipment,
-  roomConstructionElements,
-  roomDecorElements
-);
-const room57 = new Room(
-  //область видимости ограничена данным модулем main.js
-  realTeacher,
-  "M-FD2-54-19",
-  "chairs and desks",
-  "computers",
-  roomConstructionElements,
-  "Abstract wallPainting"
-);
+const room = new Room(57, teacher, students, furniture, tech, construction, decor);
 
-console.log(room57);
+const lines = [
+  "Room 57 composed across ES modules",
+  "",
+  room.summary(),
+  "",
+  `teacher:   ${teacher.teach()} (${teacher.experience})`,
+  `students:  ${students.total()} (${students.boys.length} boys, ${students.girls.length} girls)`,
+  `schedule:  ${students.schedule()}`,
+  `furniture: ${furniture.computerDesks} computer desks, ${furniture.seats()} seats total`,
+  `tech:      ${tech.status()}`,
+  `structure: ${construction.describe()}`,
+  `decor:     ${decor.describe()}`,
+];
+console.log(lines.join("\n"));

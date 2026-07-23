@@ -3,15 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Recursive Password Check</title>
+    <title>js-practice · recursive password check</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-    <p></p>
-    <h3>Click this button to verify your password!</h3>
-    <p></p>
-    <button class="button">CHECK YOUR PASSWORD</button>
+    <main class="card">
+      <h1 class="card__title">recursive password check</h1>
+      <p class="card__sub">
+        the check calls itself to compare your input to the target one character
+        at a time, then stops; each recursive step is printed below
+      </p>
+
+      <div class="field">
+        <label class="field__label" for="password">password (target: open-sesame)</label>
+        <input
+          id="password"
+          class="field__input"
+          type="text"
+          placeholder="type the password"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="actions">
+        <button type="button" id="check" class="btn btn--primary">check</button>
+      </div>
+
+      <pre class="console" id="out" hidden></pre>
+    </main>
     <script type="module" src="src/modules/main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Recursion solves a problem by having a function call itself on a smaller part, and getting the base cases right is what separates a clean recursive solution from an infinite loop."
+    ></script>
   </body>
 </html>

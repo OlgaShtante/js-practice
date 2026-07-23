@@ -1,6 +1,6 @@
 # Classroom OOP Model (ES modules)
 
-The classroom domain again, this time split across **ES modules** — one
+The classroom domain again, this time split across **ES modules**: one
 constructor per file (`teacher`, `students`, `furniture`, `techEquip`,
 `constructEquip`, `decElements`) composed by `Room` in [`room.js`](src/modules/room.js)
 and assembled in [`main.js`](src/modules/main.js). `Room` mixes instance methods
@@ -10,6 +10,9 @@ some logic at construction time.
 **Practises:** ES module `import`/`export`, module scope, constructor
 functions across files, instance vs. prototype methods, object composition.
 
+**Why it matters:** Splitting a model across ES modules with one responsibility
+each is how JavaScript codebases stay navigable as they grow.
+
 **Source:** [`src/modules/`](src/modules/)
 
 > This is the most structured version of the classroom exercise. Compare with
@@ -18,6 +21,7 @@ functions across files, instance vs. prototype methods, object composition.
 > and [`prototype-inheritance`](../3-prototype-inheritance) (prototype methods).
 
 **Run:** serve statically (see the
-[repo README](../../README.md#running-a-task)); output is in the console.
+[repo README](../../README.md#running-a-task)); the console output is also
+mirrored into the panel on the page.
 
 [**▶ Live demo**](https://stackblitz.com/github/OlgaShtante/js-practice/tree/main/1-objects-and-prototypes/2-classroom-oop-model?view=preview)

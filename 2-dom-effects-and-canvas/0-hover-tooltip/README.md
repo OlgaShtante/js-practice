@@ -6,6 +6,10 @@ again on `mouseleave`.
 **Practises:** `mouseover` / `mouseleave` events, toggling
 `style.display`.
 
+**Why it matters:** Showing and hiding elements in response to pointer events is
+the smallest version of the show/hide logic behind menus, tooltips, and
+dropdowns.
+
 **Source:** [`src/modules/main.js`](src/modules/main.js)
 
 **Run:** serve statically (see the

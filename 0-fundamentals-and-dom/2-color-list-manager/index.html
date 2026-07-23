@@ -3,38 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Color List Manager</title>
+    <title>js-practice · colour list manager</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-    <h1>Change background colour by adding or selecting a new one:</h1>
-    <table style="width:100%">
-      <tr>
-        <th>
-          <input
-            type="text"
-            placeholder="Enter a new colour here"
-            class="input-color"
-          />
-          <p></p>
-          <button class="add-button">Add</button>
-          <button class="remove-button">Remove</button>
-          <br />
-        </th>
-        <th>
-          <select class="dropdown">
-            <option disabled selected value="not selected"
-              >-- Select a value --</option
-            >
-            <option value="blue">blue</option>
-          </select>
-          <p></p>
-          <button class="remove-selected">Remove selected</button>
-        </th>
-      </tr>
-    </table>
+    <main class="card">
+      <h1 class="card__title">colour list manager</h1>
+      <p class="card__sub">
+        add, select (any from this
+        <a
+          class="hint-link"
+          href="https://www.w3schools.com/tags/ref_colornames.asp"
+          target="_blank"
+          rel="noopener noreferrer"
+          >palette</a
+        >) or remove a colour, and the whole page tints to your choice
+      </p>
 
+      <div class="field">
+        <label class="field__label" for="color-input">colour</label>
+        <input
+          id="color-input"
+          name="color"
+          type="text"
+          class="field__input"
+          placeholder="enter a colour (e.g. teal)"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="actions">
+        <button type="button" id="add-color" class="btn btn--primary">add</button>
+        <button type="button" id="remove-color" class="btn">remove</button>
+      </div>
+
+      <p id="input-message" class="message" role="alert" aria-live="polite" hidden></p>
+
+      <div class="field">
+        <label class="field__label" for="color-select">saved colours</label>
+        <select id="color-select" name="saved-colors" class="field__input">
+          <option disabled value="not selected">select a colour</option>
+          <option value="teal" selected>teal</option>
+        </select>
+      </div>
+
+      <div class="actions">
+        <button type="button" id="remove-selected-color" class="btn btn--danger">
+          remove selected
+        </button>
+      </div>
+
+      <p id="select-message" class="message" role="alert" aria-live="polite" hidden></p>
+    </main>
     <script src="main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Adding and removing options while keeping the control in sync with its underlying data is the essence of managing dynamic form state."
+    ></script>
   </body>
 </html>

@@ -1,13 +1,12 @@
 const link = document.querySelector(".link");
-link.addEventListener("mouseover", showMessage);
-link.addEventListener("mouseleave", hideMessage);
+const message = document.getElementById("msgDiv");
 
-window.onload = document.getElementById("msgDiv").style.display = "none";
+message.style.display = "none";
 
-function showMessage() {
-  document.getElementById("msgDiv").style.display = "block";
-}
+link.addEventListener("mouseover", function () {
+  message.style.display = "block";
+});
 
-function hideMessage() {
-  document.getElementById("msgDiv").style.display = "none";
-}
+link.addEventListener("mouseleave", function () {
+  message.style.display = "none";
+});

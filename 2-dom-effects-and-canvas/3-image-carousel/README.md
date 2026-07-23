@@ -7,6 +7,9 @@ and lets you step through slides manually; leaving resumes it.
 **Practises:** combining automatic (`setTimeout`) and manual navigation,
 `clearTimeout`, `mouseover`/`mouseleave`, index wrap-around in both directions.
 
+**Why it matters:** Combining a timer with manual controls, and pausing one for
+the other, is the state juggling every interactive widget has to get right.
+
 **Source:** [`src/modules/main.js`](src/modules/main.js)
 
 > Builds on [`auto-slideshow`](../2-auto-slideshow).

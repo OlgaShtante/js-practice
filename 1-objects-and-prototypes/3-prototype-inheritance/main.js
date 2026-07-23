@@ -1,157 +1,66 @@
-window.addEventListener("load", roomDescription);
+// Room #57 where every behaviour lives on a Constructor.prototype.
+// On load the demo calls those inherited methods and shows that the methods
+// sit on the prototype, not on the instances (JSON.stringify would hide them).
 
-function roomDescription() {
-  function Teacher(firstName, lastName, age) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-  }
-  const realTeacher = new Teacher("Yury", "Tatsenka", 33);
-  Teacher.prototype.teaches = function() {
-    console.log(`${this.firstName}${this.lastName} teaches JS`);
-  };
-
-  function Students(boys, girls) {
-    this.boys = boys;
-    this.girls = girls;
-  }
-  const groupOfStudents = new Students(
-    [
-      " Maxim",
-      " Alexandr",
-      " Alex",
-      " Alexey",
-      " Tural",
-      " Max",
-      " Ilya",
-      " Vladislav",
-      " Eugeniy",
-      " Oleg"
-    ],
-    [" Kristina", " Tanya", " Olga"]
-  );
-  Students.prototype.study = function() {
-    console.log(`these ${this.boys}${this.girls} study JS`);
-  };
-
-  function Furniture(
-    computerDesks,
-    teacherDesk,
-    chairs,
-    studyDesks,
-    rollingChairs
-  ) {
-    this.computerDesks = computerDesks;
-    this.teacherDesk = teacherDesk;
-    this.chairs = chairs;
-    this.studyDesks = studyDesks;
-    this.rollingChairs = rollingChairs;
-  }
-
-  const roomFurniture = new Furniture(
-    20,
-    1,
-    20,
-    { size: "middle", quantity: 20 },
-    {
-      seatMaterial: "fabric",
-      chairMaterial: "plastic",
-      height: "controllable",
-      quantity: 21
-    }
-  );
-  Furniture.prototype.arrange = function() {
-    console.log("Arrange furniture in the room");
-  };
-
-  function TechEquipment(computers, projector, airConditioning) {
-    this.computers = computers;
-    this.projector = projector;
-    this.airConditioning = airConditioning;
-  }
-
-  const roomTechEquipment = new TechEquipment(
-    {
-      monitors: 21,
-      systemUnits: 21,
-      keyboards: 21,
-      mouses: 21,
-      speakers: "null",
-      michrophones: "null"
-    },
-    { useful: "yes", working: "yes" },
-    { remoteControler: "lost", workingWell: "yes" }
-  );
-  TechEquipment.prototype.use = function() {
-    console.log("All equioment can be used");
-  };
-
-  function ConstructionEquipment(door, window) {
-    this.door = door;
-    this.window = window;
-  }
-
-  const roomConstructionElements = new ConstructionEquipment(
-    { material: "wood", size: "standard" },
-    {
-      material: {
-        frameMaterial: "plastic",
-        windowMaterial: "glass"
-      },
-      size: "big"
-    }
-  );
-  ConstructionEquipment.prototype.open = function() {
-    console.log("It is opened during the break");
-  };
-  ConstructionEquipment.prototype.close = function() {
-    console.log("It is closed during the lesson");
-  };
-  ConstructionEquipment.prototype.lock = function() {
-    console.log("It is locked before&after the lesson");
-  };
-
-  function DecorElements(curtains, wall) {
-    this.curtains = curtains;
-    this.wall = wall;
-  }
-
-  const roomDecorElements = new DecorElements(
-    { type: "roll", material: "fabric" },
-    { decorType: "wallPainting", style: "abstractArt" }
-  );
-  DecorElements.prototype.makeComfortable = function() {
-    console.log(`${this.wall} make the room more comfortable!`);
-  };
-
-  function Room(
-    teacher,
-    students,
-    furniture,
-    techEquipment,
-    constructionEquipment,
-    decorElements
-  ) {
-    this.teacher = teacher;
-    this.students = students;
-    this.furniture = furniture;
-    this.techEquipment = techEquipment;
-    this.constructionEquipment = constructionEquipment;
-    this.decorElements = decorElements;
-  }
-  const room57 = new Room(
-    realTeacher,
-    groupOfStudents,
-    roomFurniture,
-    roomTechEquipment,
-    roomConstructionElements,
-    roomDecorElements
-  );
-
-  Room.prototype.giveNumber = function() {
-    console.log("Room 57");
-  };
-  return room57;
+function Teacher(firstName, lastName, age) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.age = age;
 }
-const room57 = roomDescription();
-document.getElementById("out").innerHTML = JSON.stringify(room57, null, 5);
+Teacher.prototype.teach = function () {
+  return `${this.firstName} ${this.lastName} teaches JS`;
+};
+
+function Students(boys, girls) {
+  this.boys = boys;
+  this.girls = girls;
+}
+Students.prototype.study = function () {
+  return `${this.boys.length + this.girls.length} students study JS`;
+};
+
+function Furniture(desks, chairs) {
+  this.desks = desks;
+  this.chairs = chairs;
+}
+Furniture.prototype.arrange = function () {
+  return `arranging ${this.desks} desks and ${this.chairs} chairs`;
+};
+
+function Room(number, teacher, students, furniture) {
+  this.number = number;
+  this.teacher = teacher;
+  this.students = students;
+  this.furniture = furniture;
+}
+Room.prototype.describe = function () {
+  return `room ${this.number}: ${this.teacher.teach()}; ${this.students.study()}`;
+};
+
+function render() {
+  const teacher = new Teacher("Yury", "Tatsenka", 33);
+  const students = new Students(
+    ["Maxim", "Alexandr", "Alex", "Alexey", "Tural", "Max", "Ilya", "Vladislav", "Eugeniy", "Oleg"],
+    ["Kristina", "Tanya", "Olga"]
+  );
+  const furniture = new Furniture(20, 41);
+  const room = new Room(57, teacher, students, furniture);
+
+  const lines = [
+    "behaviour called from each Constructor.prototype:",
+    `  teacher.teach():     ${teacher.teach()}`,
+    `  students.study():    ${students.study()}`,
+    `  furniture.arrange(): ${furniture.arrange()}`,
+    `  room.describe():     ${room.describe()}`,
+    "",
+    "the methods live on the prototype, not on the instance:",
+    `  teacher.hasOwnProperty("teach"):                      ${teacher.hasOwnProperty("teach")}`,
+    `  Teacher.prototype.hasOwnProperty("teach"):            ${Teacher.prototype.hasOwnProperty("teach")}`,
+    `  Object.getPrototypeOf(teacher) === Teacher.prototype: ${Object.getPrototypeOf(teacher) === Teacher.prototype}`,
+    `  teacher instanceof Teacher:                           ${teacher instanceof Teacher}`,
+  ];
+
+  document.getElementById("out").textContent = lines.join("\n");
+}
+
+window.addEventListener("load", render);

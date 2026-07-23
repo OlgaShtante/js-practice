@@ -1,16 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Prototype Chain</title>
+    <title>js-practice · prototype chain</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-    <p class="link">
-      <a target="_blank" href="https://prnt.sc/o56x7l">Prototype chain</a>
-    </p>
+    <main class="card">
+      <h1 class="card__title">prototype chain</h1>
+      <p class="card__sub">
+        a three-level chain built with Object.create; the levels and method
+        ownership below are discovered at runtime. click a lookup to see which
+        prototype answers it.
+      </p>
+
+      <section class="section">
+        <h2 class="section__label">the chain</h2>
+        <div id="chain" class="chain"></div>
+      </section>
+
+      <section class="section">
+        <h2 class="section__label">method lookup (click a row)</h2>
+        <div id="lookup" class="lookup"></div>
+      </section>
+    </main>
+
     <script type="module" src="src/modules/main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Every property lookup in JavaScript walks the prototype chain, so seeing how the chain is built is what demystifies inheritance and this."
+    ></script>
   </body>
 </html>

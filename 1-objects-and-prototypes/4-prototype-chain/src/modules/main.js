@@ -1,40 +1,149 @@
-function Language() {
-  const language = "I'm the main object";
+// A manual prototype chain: Language <- ForeignLanguage <- SlovenianLanguage.
+// Each level links to its parent via Object.create(Parent.prototype). Instead of
+// dumping the object for devtools, the page walks the live chain and renders it:
+// every level, the methods each one owns, and which level answers a given call.
+
+function Language(name) {
+  this.name = name;
 }
-//Создание базового объекта 1, на основании которого
-//будут созданы все остальные объекты по цепочке прототипирования
+Language.prototype.describe = function () {
+  return `${this.name} is a language`;
+};
 
-function ForeignLanguage() {}
-//cоздание объекта 2 на основе базового объекта 1,
-//свойство __proto__ объекта 2 указывает на объект 1,
-//Foreign.prototype указывает на объект 2,
-//свойство конструктор объекта 2 указывает на Foreign.prototype.
-
+function ForeignLanguage(name) {
+  Language.call(this, name);
+}
 ForeignLanguage.prototype = Object.create(Language.prototype);
-//создание объекта 3,
-// свойство __proto__ объекта 3 указывает на объект 4,
-//ForeignLanguage.prototype теперь указывает на объект 3,
-//ForeignLanguage.prototype больше не указывает на объект 2.
-
 ForeignLanguage.prototype.constructor = ForeignLanguage;
-//Свойство constructor объекта 3 указывает на ForeignLanguage
+ForeignLanguage.prototype.isForeign = function () {
+  return `${this.name} is not my native language`;
+};
 
-function SlovenianLanguage(read, speak) {}
-//создание SlovenianLaguage, объекта 5 на основе базового объекта 1,
-//свойство __proto__объекта 5 указывает на объект 1
+function SlovenianLanguage(read, speak) {
+  ForeignLanguage.call(this, "Slovenian");
+  this.read = read;
+  this.speak = speak;
+}
 SlovenianLanguage.prototype = Object.create(ForeignLanguage.prototype);
-//создание объекта 6,
-//свойство __proto__ объекта 6 указывает на объект 3,
-//Slovenian.prototype теперь указывает на объект 6,
-//Slovenian.prototype больше не указывает на объект 5.
 SlovenianLanguage.prototype.constructor = SlovenianLanguage;
-//свойство constructor объекта 6 указывает на SlovenianLanguage
+SlovenianLanguage.prototype.learn = function () {
+  return `to learn ${this.name}: ${this.read}, ${this.speak}`;
+};
 
 const learnSlovenian = new SlovenianLanguage(
   "read Slovenian books",
-  "communicate with native speakers"
+  "talk with native speakers",
 );
-//создание объекта 7 на основе объекта 6,
-//соnst learnSlovenian указывает на объект 7
 
-console.log(learnSlovenian);
+// ---- walk the live chain into an array of levels ----
+// each level: the object itself, a label, and the names it owns (data or methods)
+function buildLevels(instance, instanceName) {
+  const levels = [
+    {
+      obj: instance,
+      label: instanceName,
+      kind: "instance",
+      owns: ownNames(instance),
+    },
+  ];
+  let proto = Object.getPrototypeOf(instance);
+  while (proto) {
+    const isObjectProto = proto === Object.prototype;
+    const ctor = proto.constructor ? proto.constructor.name : "Object";
+    levels.push({
+      obj: proto,
+      label: isObjectProto ? "Object.prototype" : `${ctor}.prototype`,
+      kind: isObjectProto ? "root" : "proto",
+      owns: isObjectProto ? [] : ownNames(proto),
+    });
+    proto = Object.getPrototypeOf(proto);
+  }
+  return levels;
+}
+
+// own property names minus the constructor back-reference we reset by hand
+function ownNames(obj) {
+  return Object.getOwnPropertyNames(obj).filter(
+    (name) => name !== "constructor",
+  );
+}
+
+// find the first level along the chain that actually owns `name` (the lookup)
+function resolveOwner(levels, name) {
+  return levels.findIndex((level) =>
+    Object.prototype.hasOwnProperty.call(level.obj, name),
+  );
+}
+
+const levels = buildLevels(learnSlovenian, "learnSlovenian");
+
+// methods to demonstrate resolving, each defined on a different level
+const calls = [
+  { name: "learn", run: () => learnSlovenian.learn() },
+  { name: "isForeign", run: () => learnSlovenian.isForeign() },
+  { name: "describe", run: () => learnSlovenian.describe() },
+];
+
+// ---- render ----
+const chainEl = document.getElementById("chain");
+const lookupEl = document.getElementById("lookup");
+const levelEls = [];
+
+levels.forEach((level, index) => {
+  const el = document.createElement("div");
+  el.className = `level level--${level.kind}`;
+
+  const head = document.createElement("div");
+  head.className = "level__head";
+  head.textContent = level.label;
+  el.appendChild(head);
+
+  const body = document.createElement("div");
+  body.className = "level__body";
+  if (level.kind === "root") {
+    body.innerHTML = `<span class="muted">built-in object methods (toString, hasOwnProperty, ...)</span>`;
+  } else {
+    const kind = level.kind === "instance" ? "own props" : "owns";
+    body.innerHTML =
+      `<span class="muted">${kind}:</span> ` +
+      level.owns.map((n) => `<code>${n}</code>`).join(" ");
+  }
+  el.appendChild(body);
+
+  if (index < levels.length - 1) {
+    const link = document.createElement("div");
+    link.className = "level__link";
+    link.textContent = "↑ __proto__";
+    el.appendChild(link);
+  }
+
+  chainEl.appendChild(el);
+  levelEls.push(el);
+});
+
+calls.forEach(({ name, run }) => {
+  const ownerIndex = resolveOwner(levels, name);
+  const owner = levels[ownerIndex];
+
+  const row = document.createElement("button");
+  row.type = "button";
+  row.className = "lookup__row";
+  row.innerHTML =
+    `<code>${name}()</code>` +
+    `<span class="lookup__owner">found on ${owner.label}</span>` +
+    `<span class="lookup__result">${run()}</span>`;
+
+  // clicking walks attention up to the level that owns the method
+  row.addEventListener("click", () => {
+    levelEls.forEach((el) => el.classList.remove("is-hit"));
+    lookupEl
+      .querySelectorAll(".lookup__row")
+      .forEach((el) => el.classList.remove("is-active"));
+    for (let i = 0; i <= ownerIndex; i++) {
+      levelEls[i].classList.add("is-hit");
+    }
+    row.classList.add("is-active");
+  });
+
+  lookupEl.appendChild(row);
+});

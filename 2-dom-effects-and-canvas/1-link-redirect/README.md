@@ -7,6 +7,9 @@ Intercepts a link click, cancels the default navigation with
 **Practises:** `preventDefault`, programmatic navigation
 (`location.replace`).
 
+**Why it matters:** Intercepting a default browser action with `preventDefault`
+is what lets JavaScript take over links, forms, and other native behaviour.
+
 **Source:** [`src/modules/main.js`](src/modules/main.js)
 
 **Run:** serve statically (see the

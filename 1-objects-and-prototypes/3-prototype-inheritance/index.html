@@ -1,15 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Prototype Inheritance</title>
+    <title>js-practice · prototype inheritance</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-    <h1>Objects of the room:</h1>
-    <pre id="out"></pre>
+    <main class="card">
+      <h1 class="card__title">prototype inheritance</h1>
+      <p class="card__sub">
+        the room graph, with behaviour on each Constructor.prototype
+      </p>
+
+      <pre class="console" id="out"></pre>
+    </main>
     <script src="main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Putting shared behaviour on the prototype instead of on each instance is how JavaScript reuses methods without duplicating them per object."
+    ></script>
   </body>
 </html>

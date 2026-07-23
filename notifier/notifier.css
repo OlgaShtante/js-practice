@@ -1,0 +1,152 @@
+/* Reusable "why this practice matters" notifier (see README.md in this folder).
+   A slim header bar fixed to the top of a task page. At its far left is a "?"
+   circle (a tape-measure case); the tape (a ribbon the same height as the
+   circle's diameter) rolls out of it left-to-right with the note, holds ~7s,
+   then recoils back into the case. Hovering or focusing the circle draws the
+   tape out again. The reveal is a clip-path unroll, not a slide. */
+
+.notifier {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", "Fira Code",
+    Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+/* keep page content clear of the fixed header (task pages center a .card) */
+.card {
+  margin-top: 32px;
+}
+
+/* the tape "case" at the far left of the header */
+.notifier__mark {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 2px solid #14b8a6;
+  background: radial-gradient(circle at 35% 30%, #12808f, #0a4048);
+  color: #d8faf5;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: help;
+  position: relative;
+  z-index: 2;
+}
+.notifier:focus-visible .notifier__mark {
+  outline: 2px solid #14b8a6;
+  outline-offset: 2px;
+}
+
+/* the tape: same height as the circle, rolls out to the right of it */
+.notifier__ribbon {
+  height: 40px;
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  margin-left: -14px;
+  padding: 0 20px 0 24px;
+  border-radius: 0 8px 8px 0;
+  border: 1px solid #235c65;
+  border-left: none;
+  background: linear-gradient(90deg, #0a4048, #04191d);
+  color: #d3ebe8;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+
+  /* retracted: rolled into the case at the left. Also the resting state after
+     the intro. Recoil easing is quick. */
+  clip-path: inset(0 100% 0 0 round 0 8px 8px 0);
+  opacity: 0;
+  transform-origin: left center;
+  transition:
+    clip-path 0.34s cubic-bezier(0.7, 0, 0.84, 0),
+    opacity 0.2s ease;
+}
+
+.notifier__label {
+  flex: none;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #7fe8dd;
+}
+.notifier__text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+}
+/* the message scrolls in a seamless loop when it overflows (driven by JS) */
+.notifier__track {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+}
+.notifier__copy {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* draw the tape out on hover/focus (smooth ease-out) */
+.notifier:hover .notifier__ribbon,
+.notifier:focus-within .notifier__ribbon {
+  clip-path: inset(0 0 0 0 round 0 8px 8px 0);
+  opacity: 1;
+  transition:
+    clip-path 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease;
+}
+
+/* one-time intro: roll out, hold ~7s, recoil back into the case */
+.notifier.is-intro .notifier__ribbon {
+  animation: notifierTape 8s forwards;
+}
+@keyframes notifierTape {
+  0% {
+    clip-path: inset(0 100% 0 0 round 0 8px 8px 0);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  7% {
+    clip-path: inset(0 0 0 0 round 0 8px 8px 0);
+    opacity: 1;
+  }
+  92% {
+    clip-path: inset(0 0 0 0 round 0 8px 8px 0);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.7, 0, 0.84, 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0 round 0 8px 8px 0);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notifier.is-intro .notifier__ribbon {
+    animation: none;
+  }
+  .notifier__ribbon {
+    transition: none;
+  }
+}

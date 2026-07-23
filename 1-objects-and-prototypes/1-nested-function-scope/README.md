@@ -7,6 +7,9 @@ a nested function** (`toDisplay` → `roomDescription`), returning the composed
 **Practises:** lexical/nested scope, constructor functions, object composition,
 `JSON.stringify`.
 
+**Why it matters:** Which variables a function can see is decided by where it is
+defined, and that lexical scope is the basis for closures and module privacy.
+
 **Source:** [`main.js`](main.js)
 
 **Run:** open [`index.html`](index.html) directly in a browser.

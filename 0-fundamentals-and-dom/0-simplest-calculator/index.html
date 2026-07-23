@@ -3,27 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Simplest Calculator</title>
+    <title>js-practice · simplest calculator</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-    <form>
-      <h1>ADDITION:</h1>
-      <p></p>
-      <hr />
-      <p></p>
-      <input placeholder="Input the first number" type="text" id="inp1" />
-      <br />
-      <p></p>
-      <input placeholder="Input the second number" type="text" id="inp2" />
-      <p></p>
-      <br />
-      <button class="btn">COUNT!</button>
-      <p></p>
-    </form>
+    <main class="card">
+      <h1 class="card__title">simplest calculator</h1>
+      <p class="card__sub">
+        add two numbers together; decimal numbers can be entered using either a
+        dot (.) or a comma (,)
+      </p>
+
+      <div class="field">
+        <label class="field__label" for="num-1">first number</label>
+        <input
+          id="num-1"
+          name="num1"
+          type="text"
+          inputmode="decimal"
+          class="field__input"
+          placeholder="e.g. 21"
+        />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="num-2">second number</label>
+        <input
+          id="num-2"
+          name="num2"
+          type="text"
+          inputmode="decimal"
+          class="field__input"
+          placeholder="e.g. 21"
+        />
+      </div>
+
+      <div class="actions">
+        <button type="button" id="count" class="btn btn--primary">count</button>
+      </div>
+
+      <output id="result" class="readout" hidden></output>
+      <p id="calc-error" class="message" role="alert" aria-live="polite" hidden></p>
+    </main>
     <script type="module" src="src/modules/main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Reliable string-to-number conversion depends on type coercion and floating-point precision, the same care that prevents unreliable numeric assertions in test automation."
+    ></script>
   </body>
 </html>
-
-<!-- onclick="plus()" -->

@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Hover Tooltip</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js-practice · hover tooltip</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-    <a
-      class="link"
-      target="_blank"
-      href="https://docs.google.com/spreadsheets/d/19yW_F8qeg7mHGCU8L6i3siPyY4930gResmj0OxfKr_M/edit#gid=1539749114"
-      ><h1>Requirements</h1></a
-    >
-    <div id="msgDiv">
-      Clicking 'Requirements' will open a google spreadsheet with requirements
-      in the new tab!
-    </div>
+    <main class="card">
+      <h1 class="card__title">hover tooltip</h1>
+      <p class="card__sub">hover the link to reveal its message</p>
 
+      <a
+        class="link hint-link"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://docs.google.com/spreadsheets/d/19yW_F8qeg7mHGCU8L6i3siPyY4930gResmj0OxfKr_M/edit#gid=1539749114"
+        >requirements</a
+      >
+      <div id="msgDiv" class="note">
+        clicking 'requirements' opens a google spreadsheet in a new tab
+      </div>
+    </main>
     <script type="module" src="src/modules/main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Showing and hiding elements in response to pointer events is the smallest version of the show/hide logic behind menus, tooltips, and dropdowns."
+    ></script>
   </body>
 </html>

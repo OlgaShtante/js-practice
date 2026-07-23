@@ -1,15 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Nested Function Scope</title>
+    <title>js-practice · nested function scope</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-    <button onclick="toDisplay()">click to view all objects</button>
-    <pre id="out"></pre>
+    <main class="card">
+      <h1 class="card__title">nested function scope</h1>
+      <p class="card__sub">
+        a classroom object graph built with constructors in nested scope
+      </p>
+
+      <div class="actions">
+        <button type="button" id="show-objects" class="btn btn--primary">
+          show objects
+        </button>
+      </div>
+      <pre class="console" id="out" hidden></pre>
+    </main>
     <script src="main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Which variables a function can see is decided by where it is defined, and that lexical scope is the basis for closures and module privacy."
+    ></script>
   </body>
 </html>

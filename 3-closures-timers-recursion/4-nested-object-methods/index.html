@@ -3,11 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Nested Object Methods</title>
+    <title>js-practice · nested object deep copy</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
+    <main class="card">
+      <h1 class="card__title">nested object deep copy</h1>
+      <p class="card__sub">
+        recursively deep-copies a nested object, guarding against circular
+        references
+      </p>
+
+      <pre class="console" id="out"></pre>
+    </main>
+    <script src="src/mirror.js"></script>
     <script type="module" src="src/modules/main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Walking a nested object recursively while guarding against cycles is exactly what deep-clone and serialization routines have to handle."
+    ></script>
   </body>
 </html>

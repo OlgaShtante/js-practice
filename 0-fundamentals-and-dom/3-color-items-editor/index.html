@@ -3,41 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Color Items Editor</title>
+    <title>js-practice · colour items editor</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-    <div class="container">
-      <input
-        class="bg-color-input"
-        type="text"
-        placeholder="background color"
-      />
-      <input class="text-color-input" type="text" placeholder="text color" />
-      <button class="add-button">Add</button>
-      <div class="items">
-        <div class="item" style="background-color: blue;">
-          <span class="item-text" style="color: white;">
-            white
-          </span>
-          <button class="delete-button">X</button>
-        </div>
-        <div class="item" style="background-color: yellow;">
-          <span class="item-text" style="color: black;">
-            black
-          </span>
-          <button class="delete-button">X</button>
-        </div>
-        <div class="item" style="background-color: whitesmoke;">
-          <span class="item-text" style="color: green;">
-            green
-          </span>
-          <button class="delete-button">X</button>
-        </div>
+    <main class="card">
+      <h1 class="card__title">colour items editor</h1>
+      <p class="card__sub">
+        add a colour pair; once it appears below, click it to see it applied in
+        the preview
+      </p>
+
+      <div class="field">
+        <span class="field__label">preview</span>
+        <div class="preview" id="preview">preview</div>
       </div>
-    </div>
-    <div class="hello-world">Such a wonderful day!</div>
+
+      <div class="field">
+        <label class="field__label" for="bg-color-input">background colour</label>
+        <input
+          id="bg-color-input"
+          name="bgColor"
+          type="text"
+          class="field__input"
+          placeholder="e.g. teal"
+          autocomplete="off"
+        />
+        <p class="message" id="msg-bg" role="alert" aria-live="polite" hidden></p>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="text-color-input">text colour</label>
+        <input
+          id="text-color-input"
+          name="textColor"
+          type="text"
+          class="field__input"
+          placeholder="e.g. white"
+          autocomplete="off"
+        />
+        <p class="message" id="msg-text" role="alert" aria-live="polite" hidden></p>
+      </div>
+
+      <div class="actions">
+        <button type="button" id="add-item" class="btn btn--primary">add</button>
+      </div>
+
+      <p id="editor-message" class="message" role="alert" aria-live="polite" hidden></p>
+
+      <div class="items" id="items"></div>
+    </main>
     <script src="main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Rendering a list from a data array and re-rendering it after every change is the core pattern behind every data-driven interface."
+    ></script>
   </body>
 </html>

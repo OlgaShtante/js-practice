@@ -1,18 +1,9 @@
 {
-  "name": "rlmixqql.github",
-  "version": "0.0.0",
+  "name": "js-practice",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "react": "16.8.6",
-    "react-dom": "16.8.6"
-  },
+  "description": "Coursework from Web Application Development with JavaScript (IT Academy, 2019): static tasks plus a local task index.",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "react-scripts": "latest"
+    "start": "npx -y serve . -l 5050"
   }
 }

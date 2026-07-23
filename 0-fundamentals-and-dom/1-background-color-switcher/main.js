@@ -1,55 +1,76 @@
-// Function to clear previously selected background colour:
-function resetColour() {
-  document.body.style.backgroundColor = "";
-  document.body.className = "";
-  document.body.style.removeProperty("--myColor");
+const preview = document.getElementById("preview");
+
+// clear any technique's effect before applying the next one
+function resetPreview() {
+  preview.style.backgroundColor = "";
+  preview.className = "swatch";
+  preview.style.removeProperty("--swatch");
 }
 
-// JS for the 1st task:
-function changeBgColorImplementation1() {
-  let color1 = document.querySelector(".implementation-1");
-  let bgColor1 = color1.value;
-  resetColour();
-
-  document.body.style.backgroundColor = bgColor1;
+function isValidColor(value) {
+  return value !== "" && CSS.supports("color", value);
 }
 
-// JS for the 2nd task:
-function changeBgColorImplementation2() {
-  let color2 = document.querySelector(".implementation-2");
-  let bgColor2 = color2.value;
-  resetColour();
-
-  document.body.style.backgroundColor = bgColor2;
+// highlight the field red and show the error, both auto-cleared after 5s
+function showFieldError(input, message, text) {
+  input.classList.add("is-invalid");
+  message.textContent = text;
+  message.hidden = false;
+  clearTimeout(message._timer);
+  message._timer = setTimeout(() => clearFieldError(input, message), 5000);
 }
 
-// JS for the 3rd task:
-function changeBgColorImplementation3() {
-  let color3 = document.querySelector(".implementation-3");
-  let bgColor3 = color3.value;
-  resetColour();
+function clearFieldError(input, message) {
+  input.classList.remove("is-invalid");
+  message.hidden = true;
+  clearTimeout(message._timer);
+}
 
-  document.body.className = bgColor3;
-  if (bgColor3 != "Select a colour") {
-    document.body.className = bgColor3;
-  } else {
-    alert("Try again :)");
+// 1 - inline style from a text input
+document.getElementById("apply-1").addEventListener("click", function () {
+  const input = document.getElementById("input-1");
+  const message = document.getElementById("msg-1");
+  const value = input.value.trim().toLowerCase();
+  if (!isValidColor(value)) {
+    showFieldError(input, message, "no such colour");
+    return;
   }
-}
+  clearFieldError(input, message);
+  resetPreview();
+  preview.style.backgroundColor = value;
+});
 
-// JS for the 4th task:
-function changeBgColorImplementation4() {
-  let color4 = document.querySelector(".implementation-4");
-  let bgColor4 = color4.value;
-  resetColour();
+// 2 - inline style from a select
+document.getElementById("apply-2").addEventListener("click", function () {
+  resetPreview();
+  preview.style.backgroundColor = document.getElementById("select-2").value;
+});
 
-  document.body.style.setProperty("--main-color", bgColor4);
-}
+// 3 - css class from a select (classes defined in style.css)
+document.getElementById("apply-3").addEventListener("click", function () {
+  const value = document.getElementById("select-3").value;
+  resetPreview();
+  if (value !== "") {
+    preview.classList.add(value);
+  }
+});
 
-// JS for the 5th task:
-function setMainColor(selectElement) {
-  let bgColor5 = selectElement.value;
-  resetColour();
+// 4 - css custom property from a text input
+document.getElementById("apply-4").addEventListener("click", function () {
+  const input = document.getElementById("input-4");
+  const message = document.getElementById("msg-4");
+  const value = input.value.trim().toLowerCase();
+  if (!isValidColor(value)) {
+    showFieldError(input, message, "no such colour");
+    return;
+  }
+  clearFieldError(input, message);
+  resetPreview();
+  preview.style.setProperty("--swatch", value);
+});
 
-  document.body.style.setProperty("--main-color", bgColor5);
-}
+// 5 - css custom property, applied on change
+document.getElementById("select-5").addEventListener("change", function (event) {
+  resetPreview();
+  preview.style.setProperty("--swatch", event.target.value);
+});

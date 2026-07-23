@@ -1,7 +1,7 @@
-# Change Background Colour — Five Ways
+# Change Background Colour: Five Ways
 
-Five separate handlers that set the page background colour from `<select>`
-inputs, each using a different technique:
+Five separate handlers that set a preview swatch's colour from text and
+`<select>` inputs, each using a different technique:
 
 1. inline `body.style.backgroundColor`
 2. same, from a second control
@@ -11,8 +11,12 @@ inputs, each using a different technique:
 
 A shared `resetColour()` clears the previous choice first.
 
-**Practises:** multiple DOM styling strategies — inline styles, class
+**Practises:** multiple DOM styling strategies: inline styles, class
 switching, and CSS variables (`style.setProperty` / `removeProperty`).
+
+**Why it matters:** Inline styles, class swaps, and CSS variables are the three
+main ways JavaScript changes how a page looks at runtime, each suited to a
+different situation.
 
 **Source:** [`main.js`](main.js)
 

@@ -1,17 +1,16 @@
 import log from "./logger.js";
 
-function makeSyncDelay(name, seconds) {
+// A synchronous (blocking) delay: this loop holds the main thread for `ms`, so
+// nothing else can run until it finishes. Kept short so the page is not frozen
+// for long. `before` and `after` are captured in this scope and closed over by
+// the log call.
+function makeSyncDelay(name, ms) {
   const before = Date.now();
-
-  for (let i = 0; i < seconds; i++) {
-    for (let j = 0; j < 800000000; j++) {}
+  while (Date.now() - before < ms) {
+    // busy-wait, deliberately blocking the thread
   }
-
   const after = Date.now();
-  log(name, before, after, `set delay is ${seconds} sec;`);
+  log(name, before, after, `blocked synchronously for ${ms} ms`);
 }
-//Замыкание на before и after:
-//функция log имеет доступ к входным параметрам before, after
-//которые инициализированы во внешнем лексическом окружении.
 
 export { makeSyncDelay };

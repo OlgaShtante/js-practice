@@ -3,39 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Clock Tabs Stopwatch Timer</title>
+    <title>js-practice · clock, stopwatch, timer</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="links">
-        <a data-mode="clock" class="clock selected" href="#">clock</a>
-        <a data-mode="stopwatch" class="stopwatch" href="#">stopwatch</a>
-        <a data-mode="timer" class="timer" href="#">timer</a>
-      </div>
-      <div class="tabs">
-        <div data-mode="clock" class="hidden">
-          <div class="output">XX:YY:ZZ</div>
+    <main class="card">
+      <h1 class="card__title">clock · stopwatch · timer</h1>
+      <p class="card__sub">
+        a tabbed widget; stopwatch and timer share a prototype
+      </p>
+
+      <div class="container">
+        <div class="links">
+          <a data-mode="clock" class="clock selected" href="#">clock</a>
+          <a data-mode="stopwatch" class="stopwatch" href="#">stopwatch</a>
+          <a data-mode="timer" class="timer" href="#">timer</a>
         </div>
-        <div data-mode="stopwatch" class="hidden">
-          <div class="output">00:00:00</div>
-          <div class="buttons">
-            <button class="start">Start</button>
-            <button class="stop">Stop</button>
-            <button class="reset">Reset</button>
+        <div class="tabs">
+          <div data-mode="clock" class="hidden">
+            <div class="output">XX:YY:ZZ</div>
+          </div>
+          <div data-mode="stopwatch" class="hidden">
+            <div class="output">00:00:00</div>
+            <div class="buttons">
+              <button class="start">start</button>
+              <button class="stop">stop</button>
+              <button class="reset">reset</button>
+            </div>
+          </div>
+          <div data-mode="timer" class="hidden">
+            <div class="output">00:05:00</div>
+            <div class="buttons">
+              <button class="start">start</button>
+              <button class="stop">stop</button>
+              <button class="reset">reset</button>
+            </div>
+            <p class="note" data-role="alert" hidden></p>
           </div>
         </div>
-        <div data-mode="timer" class="hidden">
-          <div class="output">00:05:00</div>
-          <div class="buttons">
-            <button class="start">Start</button>
-            <button class="stop">Stop</button>
-            <button class="reset">Reset</button>
-          </div>
-        </div>
       </div>
-    </div>
+    </main>
     <script type="module" src="src/modules/main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Ticking clocks, stopwatches, and countdowns all come down to scheduling work with timers and refreshing the DOM on each tick."
+    ></script>
   </body>
 </html>

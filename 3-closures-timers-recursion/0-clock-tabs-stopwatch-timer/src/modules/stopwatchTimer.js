@@ -18,6 +18,9 @@ function StopwatchTimer(initMode, initSeconds) {
     stopButton: document.querySelector(`.container  [data-mode=${mode}] .stop`),
     resetButton: document.querySelector(
       `.container  [data-mode=${mode}] .reset`
+    ),
+    alertNote: document.querySelector(
+      `.container [data-mode=${mode}] [data-role="alert"]`
     )
   };
 
@@ -26,10 +29,12 @@ function StopwatchTimer(initMode, initSeconds) {
     stopButton,
     resetButton,
     buttons,
-    output
+    output,
+    alertNote
   } = this.htmlElements;
 
   function onStartButtonClicked() {
+    if (alertNote) alertNote.hidden = true;
     ClassUpdate.removeClass("disabled", buttons);
     ClassUpdate.addClass("disabled", [startButton]);
     timerId = setTimeout(onIntervalTick, 1000);
@@ -54,6 +59,7 @@ function StopwatchTimer(initMode, initSeconds) {
   }
 
   function onResetButtonClicked() {
+    if (alertNote) alertNote.hidden = true;
     ClassUpdate.removeClass("disabled", buttons);
     ClassUpdate.addClass("disabled", [resetButton]);
     clearTimeout(timerId);
@@ -102,11 +108,11 @@ function StopwatchTimer(initMode, initSeconds) {
     }
 
     function alertTimeIsOver() {
-      alert(
-        "Your time is OVER! Сlick 'RESET' button if you want to start this timer again!"
-      );
+      if (alertNote) {
+        alertNote.textContent = "time is over, click reset to start again";
+        alertNote.hidden = false;
+      }
     }
-    console.log("StopwatchTimer is ticking");
     timerId = setTimeout(onIntervalTick, 1000);
   }
 

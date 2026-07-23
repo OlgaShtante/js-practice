@@ -3,19 +3,89 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Prompt Form Validation</title>
+    <title>js-practice · prompt form validation</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-      <form>
-          <p><h1>Time to know a little about you!</h1></p>
-          <p></p>
-       
-          <button class="button" onclick="fillFormByPromt()">FILL THE FORM</button> 
-          
-          <p></p>
-       </form>
+    <main class="card">
+      <h1 class="card__title">prompt form validation</h1>
+      <p class="card__sub">
+        a stepped survey in a custom dialog, with validation loops; the summary
+        prints below
+      </p>
+
+      <div class="actions">
+        <button type="button" id="fill-form" class="btn btn--primary">
+          fill the form
+        </button>
+      </div>
+
+      <pre class="console" id="summary" hidden></pre>
+    </main>
+
+    <div
+      class="modal"
+      id="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      hidden
+    >
+      <div class="modal__dialog">
+        <h2 class="modal__title" id="modal-title"></h2>
+        <span class="modal__step" id="modal-step"></span>
+
+        <select id="modal-select" class="field__input" hidden></select>
+
+        <input
+          id="modal-input"
+          class="field__input"
+          type="text"
+          autocomplete="off"
+        />
+
+        <div class="modal__date" id="modal-date" hidden>
+          <input
+            id="modal-date-input"
+            class="field__input"
+            type="text"
+            inputmode="numeric"
+            placeholder="yyyy-mm-dd"
+            autocomplete="off"
+          />
+          <button type="button" id="modal-date-btn" class="btn" aria-label="open calendar">📅</button>
+          <input
+            id="modal-date-native"
+            class="modal__date-native"
+            type="date"
+            tabindex="-1"
+            aria-hidden="true"
+          />
+        </div>
+        <p class="message" id="modal-error" role="alert" aria-live="polite" hidden></p>
+
+        <div class="modal__actions" id="modal-text-actions">
+          <button type="button" id="modal-next" class="btn btn--primary">
+            next
+          </button>
+        </div>
+
+        <div class="modal__actions" id="modal-confirm-actions" hidden>
+          <button type="button" id="modal-yes" class="btn btn--primary">yes</button>
+          <button type="button" id="modal-no" class="btn">no</button>
+        </div>
+      </div>
+    </div>
+
     <script src="main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Validating each field before advancing, and re-asking until the input is correct, is what makes a multi-step form trustworthy."
+    ></script>
   </body>
 </html>

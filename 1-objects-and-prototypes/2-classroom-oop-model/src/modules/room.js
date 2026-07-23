@@ -1,35 +1,14 @@
-function Room(
-  realTeacher,
-  groupOfStudents,
-  roomFurniture,
-  roomTechEquipment,
-  roomConstructionElements,
-  roomDecorElements
-) {
-  this.realTeacher = realTeacher;
-  this.groupOfStudents = groupOfStudents;
-  this.roomFurniture = roomFurniture;
-  this.roomTechEquipment = roomTechEquipment;
-  this.roomConstructionElements = roomConstructionElements;
-  this.roomDecorElements = roomDecorElements;
-  this.roomPurpose = "studying";
-  this.rusTeacher = realTeacher;
-
-  const studyInTheRoom = function(roomParam) {
-    //область видимости ограничена функцией-конструктором Room(){}
-    alert(`Room is used for ${roomParam}`);
-  };
-  studyInTheRoom("studying");
-
-  this.gatherStudents = function() {
-    this.teacher = "Teacher";
-    console.log(`${this.teacher} gathers people around him!`);
-  };
+export function Room(number, teacher, students, furniture, tech, construction, decor) {
+  this.number = number;
+  this.teacher = teacher;
+  this.students = students;
+  this.furniture = furniture;
+  this.tech = tech;
+  this.construction = construction;
+  this.decor = decor;
+  this.purpose = "studying";
 }
 
-Room.prototype.orginizeClasses = function() {
-  this.groupOfStudents = "Students";
-  console.log(`${this.groupOfStudents} learn JS in the room 57.`);
+Room.prototype.summary = function () {
+  return `room ${this.number} for ${this.purpose}: ${this.teacher.teach()}, ${this.students.total()} students`;
 };
-
-export { Room };

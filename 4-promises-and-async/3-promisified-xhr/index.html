@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Promisified XHR</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js-practice · promisified xhr</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-    <button class="request">Get it with promise!</button>
-    <pre id="response"></pre>
+    <main class="card">
+      <h1 class="card__title">promisified xhr</h1>
+      <p class="card__sub">
+        a callback-based XHR wrapped in a Promise; click to request
+      </p>
+
+      <div class="actions">
+        <button type="button" class="request btn btn--primary">
+          get with promise
+        </button>
+      </div>
+      <pre class="console" id="out"></pre>
+    </main>
+    <script src="src/mirror.js"></script>
     <script type="module" src="src/modules/main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Wrapping a callback API in a promise is the standard way to modernise older asynchronous code so it works with async/await."
+    ></script>
   </body>
 </html>

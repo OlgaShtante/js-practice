@@ -1,16 +1,15 @@
 import log from "./logger.js";
 
-function addEventListener(name) {
+// The click handler closes over `before`, captured when the page loaded, so on
+// click it can report how long you waited before pressing the button.
+function watchButtonClick(name) {
   const before = Date.now();
-
   const button = document.querySelector("#btn");
 
   button.addEventListener("click", () => {
     const after = Date.now();
-    log(name, before, after, "button has been clicked");
-    //функция log имеет доступ к входящим параметрам before, after
-    //которые инициализированы во внешнем лексическом окружении.
+    log(name, before, after, "button clicked");
   });
 }
 
-export { addEventListener };
+export { watchButtonClick };

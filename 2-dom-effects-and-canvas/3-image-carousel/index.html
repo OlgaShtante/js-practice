@@ -1,121 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico" />
-    <title>Image Carousel</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js-practice · image carousel</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-    <header class="header">
-    <div class="row">
-    <div class="brand left">
-    <h3><a href="#">vRUSLO</a></h3></div>
-    <div class="menu">
-    <ul>
-    <li><a href="#">MenuItem1</a></li>
-    <li><a href="#">MenuItem2</a></li>
-    <li><a href="#">MenuItem3</a></li>
-    </ul>
-    </header>
-      <div class="titleSection">
-    <h3>Izberi temo / Выберите тему</h3>
-      </div>
-      <section id="topicSection">
-        <div id="carousel-area">
+    <main class="card">
+      <h1 class="card__title">image carousel</h1>
+      <p class="card__sub">
+        auto-advances; hover to pause and step with the arrows
+      </p>
+
+      <div id="carousel-area">
         <div id="arrow-left" class="arrows"></div>
-      <div class="carousel">
-        <div class="slide">
-          <div class="item card">
-          <img src="ABC.png">
-          <h2>Abeceda / Алфавит</h2>
+        <section class="carousel">
+          <div class="slide">
+            <div class="item">
+              <img src="ABC.png" alt="alphabet" />
+              <h2>Abeceda / Алфавит</h2>
+            </div>
+            <div class="item">
+              <img src="Numbers.png" alt="numbers" />
+              <h2>Števila / Числа</h2>
+            </div>
+            <div class="item">
+              <img src="Colours.png" alt="colours" />
+              <h2>Barve / Цвета</h2>
+            </div>
           </div>
-          <div class="item card">
-          <img src="Numbers.png">
-          <h2>Števila / Числа</h2>
+          <div class="slide">
+            <div class="item">
+              <img src="Family.png" alt="family" />
+              <h2>Družina / Cемья</h2>
+            </div>
+            <div class="item">
+              <img src="Fruits.png" alt="fruits" />
+              <h2>Sadje / Фрукты</h2>
+            </div>
+            <div class="item">
+              <img src="Animals.png" alt="animals" />
+              <h2>Živali / Животные</h2>
+            </div>
           </div>
-          <div class="item card">
-          <img src="Colours.png">
-          <h2>Barve / Цвета</h2>
-          </div>          
+          <div class="slide">
+            <div class="item">
+              <img src="Jobs.png" alt="jobs" />
+              <h2>Poklici / Профессии</h2>
+            </div>
+            <div class="item">
+              <img src="Activities.png" alt="activities" />
+              <h2>Dejanja / Активности</h2>
+            </div>
+            <div class="item">
+              <img src="Body.png" alt="body" />
+              <h2>Človeško telo / Тело человека</h2>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="item">
+              <img src="Time.png" alt="time" />
+              <h2>Čas / Время</h2>
+            </div>
+            <div class="item">
+              <img src="Vegetables.png" alt="vegetables" />
+              <h2>Zelenjava / Овощи</h2>
+            </div>
+            <div class="item">
+              <img src="Greetings.png" alt="greetings" />
+              <h2>Pozdravi / Приветствие</h2>
+            </div>
+          </div>
+        </section>
+        <div id="arrow-right" class="arrows"></div>
       </div>
-      <div class="slide">
-          <div class="item card">
-          <img src="Family.png">
-          <h2>Družina / Cемья</h2>  
-        </div>
-          <div class="item card">
-          <img src="Fruits.png">
-          <h2>Sadje / Фрукты</h2>
-          </div>
-          <div class="item card">
-           <img src="Animals.png">
-          <h2>Živali / Животные</h2>
-          </div>
-      </div>
-      <div class="slide">
-          <div class="item card">
-          <img src="Jobs.png">
-          <h2>Poklici / Профессии</h2>
-          </div>
-          <div class="item card">
-          <img src="Activities.png">
-          <h2>Dejanja / Активности</h2>
-          </div>
-          <div class="item card">
-          <img src="Body.png">
-          <h2>Človeško telo / Тело человека</h2>
-          </div>
-      </div>
-      <div class="slide">
-          <div class="item card">
-          <img src="Time.png">
-          <h2>Čas/ Время</h2>
-          </div>
-          <div class="item card">
-          <img src="Vegetables.png">
-          <h2>Zelenjava / Овощи</h2>
-          </div>
-          <div class="item card">
-          <img src="Greetings.png">
-          <h2>Pozdravi / Приветствие</h2>
-        </div>
-      </div>
-     </div>
-     <div id="arrow-right" class="arrows"></div>
-    </div>
-    </section>
-            <section id="moreSources">
-              <div class="row">
-                <div class="sources">
-                  <h4>
-                    Učimo se rusčino in slovenščino / Изучаем русский и словенский языки
-                  </h4>
-        
-                  <a
-                    href="http://learnrussian.rt.com/lessons/"
-                    class="button"
-                    target="_blank"
-                    >Russian</a
-                  >
-                  <a
-                    href="https://www.slonline.si/"
-                    class="button outline"
-                    target="_blank"
-                    >Slovenian</a
-                  >
-                </div>
-              </div>
-            </section>
-            <footer class="footer">
-              <div class="socialMedia">
-                  <a href="#">Sledeti nam na družabnih omrežjih</a>
-                  <a id="fb" href="#" target="_blank"></a>
-                  <a id="vk" href="#" target="_blank"></a>
-                  <a id="insta" href="#" target="_blank"></a>
-              </div>
-            </footer>
-          <script type="module" src="src/modules/main.js"></script>
-        </body>
-      </html>
-      
+    </main>
+    <script type="module" src="src/modules/main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Combining a timer with manual controls, and pausing one for the other, is the state juggling every interactive widget has to get right."
+    ></script>
+  </body>
+</html>

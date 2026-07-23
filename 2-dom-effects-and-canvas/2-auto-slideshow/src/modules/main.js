@@ -1,17 +1,13 @@
-let cardSlideIndex = 0;
+// Topic cards that auto-advance every 3 seconds.
+const slides = document.getElementsByClassName("slide");
+let index = 0;
 
 function showSlides() {
-  const cardSlide = document.getElementsByClassName("slide");
-
-  for (i = 0; i < cardSlide.length; i++) {
-    cardSlide[i].style.display = "none";
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
   }
-  cardSlideIndex++;
-  if (cardSlideIndex > cardSlide.length) {
-    cardSlideIndex = 1;
-  }
-  cardSlide[cardSlideIndex - 1].style.display = "block";
-
+  slides[index].style.display = "block";
+  index = (index + 1) % slides.length;
   setTimeout(showSlides, 3000);
 }
 

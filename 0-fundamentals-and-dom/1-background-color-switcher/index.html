@@ -3,97 +3,100 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Background Color Switcher</title>
+    <title>js-practice · background colour switcher</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000000'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='%23f59e0b' text-anchor='middle'>JS</text></svg>"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../notifier/notifier.css" />
   </head>
   <body>
-    <!-- The first task: input + button + HTML style-->
-    <div class="center">
-      <h1>UPDATE BACKGROUND COLOUR - Part 1</h1>
-      <p></p>
-      <input
-        type="text"
-        class="implementation-1 input"
-        placeholder="Enter a new background colour"
-      />
-      <p></p>
-      <button onclick="changeBgColorImplementation1()" class="button">CLICK TO UPDATE</button>
-      <!-- <input type="text" id="inp1"> -to execute the 1st implementation -->
-      <p></p>
-      <text class="txt">NOTE:</text>
-      <a
-        class="txt"
-        href="https://www.w3schools.com/colors/colors_names.asp"
-        target="_blank"
-        >use colour name or hex</a
-      >
-    </div>
-    <hr />
-    <!-- The second task: select + button + HTML style -->
-    <div class="center">
-      <p></p>
-      <h1>UPDATE BACKGROUND COLOUR - Part 2</h1>
-      <p></p>
-      <select class="implementation-2 dropdown">
-        <option class="option-red">Red</option>
-        <option class="option-green">Green</option>
-        <option class="option-blue">Blue</option>
-        <option class="placeholder" selected>Select Colour</option>
-      </select>
-      <p></p>
-      <button onclick="changeBgColorImplementation2()" class="button">CLICK TO UPDATE</button>
-    </div>
-    <hr />
-    <!-- The third task: select + button + CSS -->
-    <div class="center">
-      <p></p>
-      <h1>UPDATE BACKGROUND COLOUR - Part 3</h1>
-      <p></p>
-      <select class="implementation-3 dropdown">
-        <option class="red">red</option>
-        <option class="orange">orange</option>
-        <option class="yellow">yellow</option>
-        <option class="salad">salad</option>
-        <option class="green">green</option>
-        <option class="darkcyan">darkcyan</option>
-        <option class="blue">blue</option>
-        <option class="indigo">indigo</option>
-        <option class="purple">purple</option>
-        <option selected>Select a colour</option>
-      </select>
-      <p></p>
-      <button onclick="changeBgColorImplementation3()" class="button">CLICK TO UPDATE</button>
-      <p></p>
-    </div>
-    <hr />
-    <!-- The fourth task: input + button + CSS variable -->
-    <div class="center">
-      <p></p>
-      <h1>UPDATE BACKGROUND COLOUR - Part 4</h1>
-      <p></p>
-      <input
-        type="text"
-        class="implementation-4 input"
-        placeholder="Enter a new background colour"
-      />
-      <p></p>
-      <button onclick="changeBgColorImplementation4()" class="button">CLICK TO UPDATE</button>
-      <p></p>
-    </div>
-    <hr />
-    <!-- The 5th task: onchange + this + CSS variable-->
-    <div class="center">
-      <p></p>
-      <h1>UPDATE BACKGROUND COLOUR - Part 5</h1>
-      <p></p>
-      <select class="dropdown" onchange="setMainColor(this);">
-        <option class="white">White</option>
-        <option class="grey">Grey</option>
-        <option class="black">Black</option>
-      </select>
-      <p></p>
-    </div>
+    <main class="card">
+      <h1 class="card__title">background colour switcher</h1>
+      <p class="card__sub">
+        five ways to set a colour, each applied to the preview swatch
+      </p>
+
+      <div class="swatch" id="preview"></div>
+
+      <div class="technique">
+        <label class="field__label" for="input-1">1 · inline style from text</label>
+        <div class="technique__row">
+          <input
+            id="input-1"
+            name="color1"
+            type="text"
+            class="field__input"
+            placeholder="e.g. teal"
+            autocomplete="off"
+          />
+          <button type="button" id="apply-1" class="btn btn--primary">apply</button>
+        </div>
+        <p class="message" id="msg-1" role="alert" aria-live="polite" hidden></p>
+      </div>
+
+      <div class="technique">
+        <label class="field__label" for="select-2">2 · inline style from select</label>
+        <div class="technique__row">
+          <select id="select-2" name="color2" class="field__input">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+          </select>
+          <button type="button" id="apply-2" class="btn btn--primary">apply</button>
+        </div>
+      </div>
+
+      <div class="technique">
+        <label class="field__label" for="select-3">3 · css class from select</label>
+        <div class="technique__row">
+          <select id="select-3" name="color3" class="field__input">
+            <option value="">select a colour</option>
+            <option value="red">red</option>
+            <option value="orange">orange</option>
+            <option value="yellow">yellow</option>
+            <option value="green">green</option>
+            <option value="darkcyan">darkcyan</option>
+            <option value="blue">blue</option>
+            <option value="indigo">indigo</option>
+            <option value="purple">purple</option>
+          </select>
+          <button type="button" id="apply-3" class="btn btn--primary">apply</button>
+        </div>
+      </div>
+
+      <div class="technique">
+        <label class="field__label" for="input-4">4 · css variable from text</label>
+        <div class="technique__row">
+          <input
+            id="input-4"
+            name="color4"
+            type="text"
+            class="field__input"
+            placeholder="e.g. rebeccapurple"
+            autocomplete="off"
+          />
+          <button type="button" id="apply-4" class="btn btn--primary">apply</button>
+        </div>
+        <p class="message" id="msg-4" role="alert" aria-live="polite" hidden></p>
+      </div>
+
+      <div class="technique">
+        <label class="field__label" for="select-5">5 · css variable on change</label>
+        <div class="technique__row">
+          <select id="select-5" name="color5" class="field__input">
+            <option value="white">white</option>
+            <option value="grey">grey</option>
+            <option value="black">black</option>
+          </select>
+        </div>
+      </div>
+    </main>
     <script src="main.js"></script>
+    <script
+      src="../../notifier/notifier.js"
+      data-why="Inline styles, class swaps, and CSS variables are the three main ways JavaScript changes how a page looks at runtime, each suited to a different situation."
+    ></script>
   </body>
 </html>

@@ -1,12 +1,17 @@
-# Classroom — Object Literals
+# Classroom: Object Literals
 
 Describes the same classroom domain (teacher, students, furniture, tech
 equipment, construction and decor elements) using **object literals with method
-shorthand** instead of constructors, then alerts a short summary. Includes
-methods like `teaches()`, `studentsStudying()`, `countPlacesForStudents()`.
+shorthand** instead of constructors. "Show the room" renders a readable summary
+of the object graph into the page. Includes methods like `teaches()`,
+`studentsStudying()`, `countPlacesForStudents()`.
 
 **Practises:** object literals, nested objects, method shorthand, `this`,
 arrow vs. regular function methods.
+
+**Why it matters:** Object literals are the most direct way to model structured
+data in JavaScript, the shape you meet everywhere from configuration to API
+responses.
 
 **Source:** [`main.js`](main.js)
 
@@ -14,7 +19,7 @@ arrow vs. regular function methods.
 > (constructor-function version) and
 > [`classroom-oop-model`](../2-classroom-oop-model) (module version).
 > Note: the code has a couple of latent bugs left from the exercise
-> (`desk`/`desks` typo, `window.windowClosed`) — kept as-is as a learning
+> (`desk`/`desks` typo, `window.windowClosed`), kept as-is as a learning
 > artifact.
 
 **Run:** open [`index.html`](index.html) directly in a browser.
