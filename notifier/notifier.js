@@ -1,8 +1,9 @@
 // Reusable "why this practice matters" notifier (see README.md in this folder).
 // Include once per task page, near the end of <body>:
 //   <script src="../../notifier/notifier.js" data-why="...the note..."></script>
-// It injects a "?" badge in the top-right corner; notifier.css animates the
-// ribbon (slides out on load, holds ~7s, retracts; hover/focus to re-reveal).
+// It injects a top header bar with a "?" circle at the far left; notifier.css
+// rolls the tape (ribbon) out on load, holds ~7s, then retracts. Hover/focus
+// re-shows it, and this script loops the message when it is too long to fit.
 (function () {
   var script = document.currentScript;
   if (!script) return;

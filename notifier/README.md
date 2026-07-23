@@ -3,15 +3,17 @@
 A small, reusable "why this practice matters" widget shared across the task
 pages in this repo. It is **not** a practice task itself, just shared UI.
 
-It renders a `?` badge fixed in the top-right corner of a page, styled as a
-tape-measure case. On load the "tape" (a teal ribbon with a short note on why
-that task's concept matters) extends out of the circle to the left, holds for
-about 7 seconds, then recoils back into the case. Hovering or focusing the
-badge draws the tape out again. The reveal is driven by `clip-path`, so the
-ribbon appears to unroll from the circle rather than slide in, with a smooth
-pull-out and a snappier recoil. The teal gradient matches the repo's task
-index, and a `prefers-reduced-motion` fallback keeps the tape retracted
-(revealed on hover) for users who opt out of animation.
+It renders a slim header bar fixed to the top of a task page, with a `?` circle
+at its far left acting as a tape-measure case. On load the tape (a teal ribbon
+the same height as the circle, carrying a short note on why that task's concept
+matters) rolls out of the circle from left to right, holds for about 7 seconds,
+then recoils back in. Hovering or focusing the circle draws the tape out again.
+If the note is longer than the space available, the message scrolls in a
+continuous loop, holding a moment at the start so the opening is readable, so
+the whole note can still be read. The teal gradient matches the repo's task
+index. The tape roll respects `prefers-reduced-motion` (it simply appears
+instead of rolling), while the looping text is driven in JavaScript so the
+message stays readable in any environment.
 
 ## Files
 
